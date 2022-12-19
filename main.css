@@ -1,0 +1,12 @@
+nav {
+  /* position: fixed; */
+  border-bottom: 1px solid #ccc;
+}
+
+th.active {
+  font-weight: bold;
+}
+
+th {
+  cursor: pointer;
+}

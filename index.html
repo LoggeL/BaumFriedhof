@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="pico.min.css">
+  <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+
+  <nav class="container">
+    <ul>
+      <li><strong>Friehdhof {{Ort}}</strong></li>
+    </ul>
+    <ul>
+      <li><a href="#">Link</a></li>
+      <li><a href="#">Link</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+
+    <input placeholder="Suchen..." id="search">
+
+    <table>
+      <thead>
+        <th name="name" class="active">
+          Name
+        </th>
+        <th name="death">
+          Todesjahr
+        </th>
+        <th name="location">
+          Grab
+        </th>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="3"><center aria-busy="true">Lädt Daten...</center></td>
+      </tbody>
+    </table>
+  </main>
+
+  <!-- Modal -->
+  <dialog id="map-modal">
+    <article>
+      <a href="#close"
+        aria-label="Close"
+        class="close"
+        data-target="map-modal"
+        onClick="toggleModal(event)">
+      </a>
+      <h3 id="modal-name"></h3>
+      <div>
+        <canvas id="canvas"></canvas>
+        <img id="treeMap" src="BaseMap.png">
+      </div>
+      <footer>
+        <a href="#cancel"
+          role="button"
+          class="secondary"
+          data-target="map-modal"
+          onClick="toggleModal(event)">
+          Schließen
+        </a>
+      </footer>
+    </article>
+  </dialog>
+
+  <script type="module" src="main.js"></script>
+  <script src="modal.js"></script>
+  <script src="map.js"></script>
+</body>
+</html>
